@@ -1,14 +1,17 @@
 .is-hidden-tablet {
   display: none;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     display: block;
   }
 }
 
 .is-hidden-desktop {
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 }
 
+.is-hidden {
+  display: none;
+}

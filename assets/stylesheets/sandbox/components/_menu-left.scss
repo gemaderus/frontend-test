@@ -1,7 +1,10 @@
 .Menu-left {
-  width: 100%;
+  // flex-basis: 100%;
   background-color: $main-color;
   height: 100vh;
+  margin-left: -188px;
+  transition: margin-left 0.3s;
+  flex: 1 0 188px;
 
   .Title {
     color: #B6B6B6;
@@ -10,14 +13,7 @@
 
   @media (min-width: $screen-sm-min) {
     & {
-      width: 188px;
-      // display: none;
-    }
-  }
-
-  @media (min-width: $screen-md-min) {
-    & {
-      display: block;
+      margin-left: 0;
     }
   }
 }

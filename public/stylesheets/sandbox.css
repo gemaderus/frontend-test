@@ -6145,9 +6145,6 @@ p {
   .Header svg {
     display: block; }
 
-.Menu-right {
-  background-color: yellow; }
-
 .Btn {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -6174,36 +6171,83 @@ p {
   overflow-x: hidden; }
 
 .Menu-left {
-  width: 100%;
   background-color: #2D2D2D;
-  height: 100vh; }
+  height: 100vh;
+  margin-left: -188px;
+  -webkit-transition: margin-left 0.3s;
+  transition: margin-left 0.3s;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 188px;
+          flex: 1 0 188px; }
   .Menu-left .Title {
     color: #B6B6B6;
     padding: 0.9rem 0.5rem; }
   @media (min-width: 768px) {
     .Menu-left {
-      width: 188px; } }
-  @media (min-width: 992px) {
-    .Menu-left {
-      display: block; } }
+      margin-left: 0; } }
 
 .Menu-list-item {
   padding: 0.5rem 1.5rem; }
+
+.Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.Stats {
+  white-space: nowrap; }
+
+.Stat {
+  display: inline-block;
+  margin-right: 15px;
+  width: calc(33.3333% - 30px); }
+  .Stat:last-child {
+    margin-right: 0; }
+  @media (min-width: 1600px) {
+    .Stat {
+      width: calc(25% - 45px); } }
 
 /* 6. Helpers */
 .non-gutter {
   padding-left: 0;
   padding-right: 0; }
 
+.is-red {
+  background-color: red; }
+
+.is-green {
+  background-color: green; }
+
+.is-pink {
+  background-color: pink; }
+
+.is-purple {
+  background-color: purple; }
+
+.is-orange {
+  background-color: orange; }
+
+.is-yellow {
+  background-color: yellow; }
+
+.is-blue {
+  background-color: blue; }
+
+.is-white {
+  background-color: white; }
+
 .is-hidden-tablet {
   display: none; }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     .is-hidden-tablet {
       display: block; } }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .is-hidden-desktop {
     display: none; } }
+
+.is-hidden {
+  display: none; }
 
 .va-center {
   display: -webkit-box;
