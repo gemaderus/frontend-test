@@ -1,5 +1,3 @@
-var defineComponent = require("flight/lib/component");
-
 module.exports = defineComponent(Foo);
 
 function Foo() {

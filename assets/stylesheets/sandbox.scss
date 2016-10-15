@@ -2,6 +2,14 @@
 
 @import "sandbox/base/normalize";
 
+/* 2. Bootstrap */
+
+@import 'sandbox/bootstrap';
+
+/* 3. Settings */
+
+@import "sandbox/settings/variables";
+
 /* 4. Base */
 
 @import "sandbox/base/global";
@@ -10,3 +18,18 @@
 @import "sandbox/base/links";
 @import "sandbox/base/label";
 @import "sandbox/base/paragraphs";
+
+/* 5. Components */
+
+@import "sandbox/components/header";
+@import "sandbox/components/sidebar";
+@import "sandbox/components/menu-right";
+@import "sandbox/components/buttons";
+@import "sandbox/components/holder";
+
+
+/* 6. Helpers */
+
+@import "sandbox/helpers/non-gutter";
+@import "sandbox/helpers/display";
+

@@ -31,6 +31,12 @@ gulp.task('watch', function() {
   gulp.watch('views/**/*.html', ['layout']);
 });
 
+gulp.task('init', function(){
+  return gulp.src('./node_modules/bootstrap-sass/assets/stylesheets/**/*')
+    .pipe(gulp.dest('./assets/stylesheets/sandbox'));
+});
+
+
 //Clean up the build directory
 gulp.task('clean', function() {
   return gulp.src('public/', {
@@ -64,7 +70,7 @@ gulp.task('styles', function() {
 gulp.task('layout', function() {
   nunjucksRender.nunjucks.configure(['views']);
 
-  return gulp.src(['views/**/*.html', '!views/layout/*.html', '!views/partials/*.html'])
+  return gulp.src(['views/**.html', '!views/layout/*.html', '!views/partials/*.html'])
     .pipe(nunjucksRender())
     .pipe(gulp.dest('public/'))
     .pipe(reload({
@@ -73,7 +79,7 @@ gulp.task('layout', function() {
 });
 
 gulp.task('images', function() {
-  return gulp.src('assets/images/**/*')
+  return gulp.src('assets/images/**')
     .pipe(gulp.dest('public/images/'));
 });
 

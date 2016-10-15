@@ -1,16 +1,18 @@
 {% extends "layout/application.html" %}
 
 {% block maincontent %}
-<h1>About this</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-2">
+      <div class="Sidebar is-hidden-tablet">Sidebar</div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-10">
+      <div class="Menu-right">Menu Right</div>
+    </div>
 
-<p>It becomes increasingly important to maintain a consistent style and visual language across all areas of a web application. To do this, I have built the following tool to prototype components for faster product development.</p>
+  </div>
 
-<p>It uses:</p>
-<ul>
-  <li>Gulp</li>
-  <li>Sass</li>
-  <li>Partials</li>
-  <li>Webpack</li>
-  <li>Browsersync</li>
-</ul>
+</div>
+
+
 {% endblock %}

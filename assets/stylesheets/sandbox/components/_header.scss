@@ -1,0 +1,14 @@
+.Header{
+  background-color: $black;
+  padding: 1.25rem 0;
+
+  svg {
+    display: block;
+  }
+
+  // @media (min-width: $screen-md-min) {
+  //   & {
+  //     background-color: red;
+  //   }
+  // }
+}
