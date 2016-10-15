@@ -1,0 +1,28 @@
+.Menu-left {
+  width: 100%;
+  background-color: $main-color;
+  height: 100vh;
+
+  .Title {
+    color: #B6B6B6;
+    padding: 0.9rem 0.5rem;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    & {
+      width: 188px;
+      // display: none;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    & {
+      display: block;
+    }
+  }
+}
+
+
+.Menu-list-item {
+  padding: 0.5rem 1.5rem;
+}

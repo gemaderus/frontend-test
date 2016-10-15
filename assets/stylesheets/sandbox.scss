@@ -22,14 +22,16 @@
 /* 5. Components */
 
 @import "sandbox/components/header";
-@import "sandbox/components/sidebar";
 @import "sandbox/components/menu-right";
 @import "sandbox/components/buttons";
 @import "sandbox/components/holder";
+@import "sandbox/components/menu-left";
 
 
 /* 6. Helpers */
 
 @import "sandbox/helpers/non-gutter";
 @import "sandbox/helpers/display";
+@import "sandbox/helpers/v-align";
+@import "sandbox/helpers/whitespaces";
 

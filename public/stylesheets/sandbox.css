@@ -6068,7 +6068,7 @@ html {
 
 html,
 body {
-  color: #444;
+  color: #ADAFB2;
   height: 100%; }
 
 body {
@@ -6098,6 +6098,9 @@ h1, h2, h3, h4, h5, h6 headings styles.
 */
 h1, h2, h3, h4, h5, h6 {
   margin: 0; }
+
+h6 {
+  font-size: 1rem; }
 
 /*
 
@@ -6142,9 +6145,6 @@ p {
   .Header svg {
     display: block; }
 
-.Sidebar {
-  background-color: green; }
-
 .Menu-right {
   background-color: yellow; }
 
@@ -6173,6 +6173,23 @@ p {
 .Holder {
   overflow-x: hidden; }
 
+.Menu-left {
+  width: 100%;
+  background-color: #2D2D2D;
+  height: 100vh; }
+  .Menu-left .Title {
+    color: #B6B6B6;
+    padding: 0.9rem 0.5rem; }
+  @media (min-width: 768px) {
+    .Menu-left {
+      width: 188px; } }
+  @media (min-width: 992px) {
+    .Menu-left {
+      display: block; } }
+
+.Menu-list-item {
+  padding: 0.5rem 1.5rem; }
+
 /* 6. Helpers */
 .non-gutter {
   padding-left: 0;
@@ -6187,3 +6204,23 @@ p {
 @media screen and (min-width: 992px) {
   .is-hidden-desktop {
     display: none; } }
+
+.va-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.mr0 {
+  margin-right: 5px; }
+
+.mr1 {
+  margin-right: 10px; }
+
+.mr15 {
+  margin-right: 15px; }
+
+.mr32 {
+  margin-right: 20px; }
