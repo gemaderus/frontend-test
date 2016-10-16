@@ -6179,8 +6179,6 @@ p {
   outline: none;
   padding: 0;
   text-decoration: none;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
   vertical-align: middle; }
 
 .Btn-traders {
@@ -6408,6 +6406,12 @@ p {
   -webkit-box-orient: vertical;
   color: #ffffff; }
 
+.Description-button {
+  margin-top: 4px; }
+  .Description-button.has-openDescription {
+    -webkit-transform: scaleY(-1);
+            transform: scaleY(-1); }
+
 .has-openDescription {
   overflow: visible;
   display: block; }
@@ -6418,60 +6422,77 @@ p {
 
 .Cards {
   width: 300px;
-  background-color: #2C2C2C; }
+  background-color: #2C2C2C;
+  display: inline-block; }
 
 .Cards-top {
-  padding: 1.5rem 1rem; }
+  padding: 1.5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 600; }
+
+.Cards-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .Cards-graphic {
   padding: 3rem; }
 
-.Cards-content-data {
-  font-weight: 700;
-  font-size: 1.3rem; }
+.Cards-header-right span {
+  margin-right: 0.3rem;
+  vertical-align: middle; }
 
-.Coin {
+.Cards-circle {
   display: inline-block;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   text-align: center;
   line-height: 16px;
-  color: #ffffff; }
+  color: #ffffff;
+  font-size: 1rem;
+  margin-right: 0.3rem;
+  font-weight: 400; }
+
+.Cards-initials {
+  color: #ffffff;
+  margin-right: 0.5rem; }
+
+.Cards-content-data {
+  font-weight: 700;
+  font-size: 1.3rem; }
 
 .Cards-content-item {
   padding: 1.5rem 1rem;
-  border-top: 1px solid #505050;
   border-bottom: 1px solid #505050; }
   .Cards-content-item:last-of-type {
     border-botton: 0; }
+  .Cards-content-item:first-of-type {
+    border-top: 1px solid #505050; }
   .Cards-content-item h5 {
     font-size: 1.3rem;
     font-weight: 400; }
 
+.Card-content-icon {
+  margin-right: 0.8rem; }
+
 .Hexagon {
-  position: relative;
-  width: 16px;
-  height: 9.24px;
-  background-color: #ffffff;
-  margin: 4.62px 0; }
+  position: relative; }
 
-.Hexagon:before,
-.Hexagon:after {
-  content: "";
+.Hexagon-number {
+  color: #000000;
+  font-size: 1rem;
+  left: 50%;
   position: absolute;
-  width: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent; }
-
-.Hexagon:before {
-  bottom: 100%;
-  border-bottom: 4.62px solid #ffffff; }
-
-.Hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top: 4.62px solid #ffffff; }
+  top: 50%;
+  -webkit-transform: translate(-50%, -65%);
+          transform: translate(-50%, -65%); }
 
 .is-flex {
   display: -webkit-box;
@@ -6482,6 +6503,9 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+
+.Graphic {
+  padding: 3.4rem; }
 
 /* 6. Helpers */
 .non-gutter {
@@ -6499,6 +6523,9 @@ p {
 
 .is-purple {
   background-color: #D267C6; }
+
+.is-purple-light {
+  background-color: #BCA5D1; }
 
 .is-orange {
   background-color: #FB6533; }
@@ -6592,3 +6619,13 @@ p {
 .has-border {
   border-left: 1px solid #505050;
   border-right: 1px solid #505050; }
+
+.popover.bottom .arrow {
+  top: -8px;
+  border-bottom-color: transparent; }
+
+.popover.bottom-left .arrow {
+  left: 15% !important; }
+
+.popover.bottom-right .arrow {
+  left: 85% !important; }

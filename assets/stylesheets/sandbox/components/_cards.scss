@@ -1,22 +1,33 @@
 .Cards {
   width: 300px;
   background-color: #2C2C2C;
+  display: inline-block;
 }
 
 .Cards-top {
   padding: 1.5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.Cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Cards-graphic {
   padding: 3rem;
 }
 
-.Cards-content-data {
-  font-weight: 700;
-  font-size: 1.3rem;
+.Cards-header-right {
+  span {
+    margin-right: 0.3rem;
+    vertical-align: middle;
+  }
 }
 
-.Coin {
+.Cards-circle {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -24,15 +35,32 @@
   text-align: center;
   line-height: 16px;
   color: $white;
+  font-size: 1rem;
+  margin-right: 0.3rem;
+  font-weight: 400;
+}
+
+.Cards-initials {
+  color: $white;
+  margin-right: 0.5rem;
+}
+
+.Cards-content-data {
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
 .Cards-content-item {
   padding: 1.5rem 1rem;
-  border-top: 1px solid #505050;
   border-bottom: 1px solid #505050;
+
 
   &:last-of-type {
     border-botton: 0;
+  }
+
+  &:first-of-type {
+    border-top: 1px solid #505050;
   }
 
   h5 {
@@ -40,3 +68,8 @@
     font-weight: 400;
   }
 }
+
+.Card-content-icon {
+  margin-right: 0.8rem;
+}
+

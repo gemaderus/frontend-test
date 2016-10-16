@@ -35,6 +35,7 @@
 @import "sandbox/components/cards";
 @import "sandbox/components/hexagon";
 @import "sandbox/components/flex";
+@import "sandbox/components/graphic";
 
 
 /* 6. Helpers */
@@ -46,4 +47,21 @@
 @import "sandbox/helpers/whitespaces";
 @import "sandbox/helpers/u-full";
 @import "sandbox/helpers/has-border";
+
+.popover.bottom .arrow {
+  top: -8px;
+  border-bottom-color: transparent;
+}
+
+.popover.bottom-left {
+  .arrow {
+    left: 15% !important;
+  }
+}
+
+.popover.bottom-right {
+  .arrow {
+    left: 85% !important;
+  }
+}
 

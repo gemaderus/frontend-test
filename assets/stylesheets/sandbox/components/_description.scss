@@ -15,6 +15,14 @@
   color: $white;
 }
 
+.Description-button {
+  margin-top: 4px;
+
+  &.has-openDescription {
+    transform: scaleY(-1);
+  }
+}
+
 .has-openDescription {
   overflow : visible;
   display: block;
