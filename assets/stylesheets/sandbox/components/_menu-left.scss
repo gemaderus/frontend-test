@@ -1,24 +1,39 @@
 .Menu-left {
-  // flex-basis: 100%;
   background-color: $main-color;
   height: 100vh;
-  margin-left: -188px;
-  transition: margin-left 0.3s;
-  flex: 1 0 188px;
+  height: calc(100vh - 50px);
+  transform: translateX(-188px);
+  transition: transform 0.3s;
+  font-size: 1rem;
+  position: absolute;
+  width: 188px;
 
   .Title {
     color: #B6B6B6;
-    padding: 0.9rem 0.5rem;
+    padding: 0 0.5rem;
+
+    h6 {
+      line-height: 3.5rem;
+    }
   }
 
-  @media (min-width: $screen-sm-min) {
+  .has-menuOpen & {
+    transform: translateX(0);
+  }
+
+  @media (min-width: $screen-md) {
     & {
-      margin-left: 0;
+      position: relative;
+      transform: translateX(0);
     }
   }
 }
 
-
 .Menu-list-item {
-  padding: 0.5rem 1.5rem;
+  padding: 0 1.5rem;
+  line-height: 3rem;
+
+  a {
+    color: $font-color;
+  }
 }

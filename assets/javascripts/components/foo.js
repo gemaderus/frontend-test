@@ -1,13 +1,13 @@
-module.exports = defineComponent(Foo);
+// module.exports = defineComponent(Foo);
 
-function Foo() {
-  "use strict";
+// function Foo() {
+//   "use strict";
 
-  this.attributes({
-    "option": "fucking option"
-  });
+//   this.attributes({
+//     "option": "fucking option"
+//   });
 
-  this.after("initialize", function() {
-    console.log("Awesome " + this.attr.option);
-  });
-}
+//   this.after("initialize", function() {
+//     console.log("Awesome " + this.attr.option);
+//   });
+// }

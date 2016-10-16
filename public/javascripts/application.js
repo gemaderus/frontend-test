@@ -46,13 +46,30 @@
 
 	var $ = __webpack_require__(1);
 
-	var foo = __webpack_require__(2);
+	// var foo = require('./components/foo');
 
-	$(function(){
-	  foo.attachTo("body");
+	// $(function(){
+	//   foo.attachTo("body");
 
-	  hljs.initHighlightingOnLoad();
+	//   hljs.initHighlightingOnLoad();
+	// });
+
+	var buttonOpen = $(".Btn-open");
+	var buttonClose = $(".Btn-close");
+	var $content = $(".js-content")
+
+	buttonOpen.on("click", function(e) {
+	  $content.toggleClass("has-menuOpen", true);
+	  buttonOpen.hide();
+	  buttonClose.show();
 	});
+
+	buttonClose.on("click", function(e) {
+	  $content.toggleClass("has-menuOpen", false);
+	  buttonOpen.show();
+	  buttonClose.hide();
+	});
+
 
 
 /***/ },
@@ -9873,25 +9890,6 @@
 
 	return jQuery;
 	}));
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	module.exports = defineComponent(Foo);
-
-	function Foo() {
-	  "use strict";
-
-	  this.attributes({
-	    "option": "fucking option"
-	  });
-
-	  this.after("initialize", function() {
-	    console.log("Awesome " + this.attr.option);
-	  });
-	}
 
 
 /***/ }

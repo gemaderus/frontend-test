@@ -16,10 +16,9 @@ General fonts and other global styles of the page.
 html {
   // -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  position: relative;
   font-size: 62.5%;
   line-height: 1.5;
-  position: relative;
 }
 
 html,
@@ -31,4 +30,5 @@ body {
 body {
   background: #eee;
   overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
 }

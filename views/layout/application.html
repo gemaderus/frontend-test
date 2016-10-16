@@ -13,17 +13,13 @@
 
   </head>
   <body>
-    <div class="Holder">
 
-      {% include "partials/header.html" %}
+    {% include "partials/header.html" %}
 
-      <section class="Content">
-        {% block maincontent %}
-        {% endblock %}
-      </section>
-
-    </div>
-
+    <section class="Content js-content">
+      {% block maincontent %}
+      {% endblock %}
+    </section>
     <script src="javascripts/application.js"></script>
   </body>
 </html>
