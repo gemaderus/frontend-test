@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="001-prueba-maquetacion-desktop" transform="translate(-1001.000000, -277.000000)" fill="#D8D8D8">
+            <g id="herramientas-filtrado" transform="translate(194.000000, 206.000000)">
+                <g id="Group-8" transform="translate(769.000000, 65.000000)">
+                    <path d="M39.5828306,10.6249862 L43.0894156,7.13758439 C43.3513775,6.87731951 43.3513775,6.45539897 43.0894156,6.19517099 C42.8274906,5.934943 42.4027664,5.934943 42.1408045,6.19517099 L38.1941118,10.1203195 C38.0545169,10.2589921 37.9916918,10.4434463 38.0008776,10.6249862 C37.9916918,10.8065629 38.0545169,10.9909802 38.1941118,11.1296897 L42.1408045,15.0548013 C42.4027664,15.3150662 42.8274537,15.3150662 43.0894156,15.0548013 C43.3513775,14.7945734 43.3513775,14.3726528 43.0894156,14.1124617 L39.5828306,10.6249862 L39.5828306,10.6249862 Z" id="Shape" transform="translate(40.642943, 10.625000) rotate(-180.000000) translate(-40.642943, -10.625000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

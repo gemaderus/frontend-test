@@ -1,0 +1,37 @@
+.Media {
+  display: flex;
+  align-items: center;
+
+}
+
+.Media-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #67D2C8;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 800;
+  color: $white;
+  font-size: 14px;
+  margin-right: 1rem;
+}
+
+.Media-lead {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.Media-user {
+  font-size: 1.3rem;
+  color: $white;
+}
+
+.Media-count {
+  color: $sky-blue;
+  font-weight: 700;
+  font-size: 1.1rem;
+  paddin: 0.1rem;
+  margin-left: 0.5rem;
+}
+

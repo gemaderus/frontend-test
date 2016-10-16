@@ -6136,7 +6136,7 @@ Reset default styles on paragraphs.
 
 */
 p {
-  margin-top: 0; }
+  margin: 0; }
 
 /* 5. Components */
 .Header {
@@ -6179,7 +6179,6 @@ p {
   outline: none;
   padding: 0;
   text-decoration: none;
-  text-transform: uppercase;
   -webkit-transition: 0.25s;
   transition: 0.25s;
   vertical-align: middle; }
@@ -6204,6 +6203,73 @@ p {
   color: #4A4A4A; }
   .Btn-account:hover {
     background-color: #E6E6E6; }
+
+.Bnt-traders-holder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
+.Btn-traders-action {
+  font-size: 15px;
+  -webkit-appearance: none;
+  border: none;
+  color: #fff;
+  width: 5em;
+  height: 5em;
+  text-indent: -9999px;
+  background-color: transparent;
+  outline: none; }
+  .Btn-traders-action:before, .Btn-traders-action:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0.7em;
+    background-color: #fff;
+    border-radius: 2em;
+    top: 45%;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease; }
+  .Btn-traders-action:before {
+    left: -1.55em; }
+  .Btn-traders-action:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    right: -1.55em; }
+  .Btn-traders-action.active:before {
+    left: 0; }
+  .Btn-traders-action.active:after {
+    right: 0; }
+
+.Btn-trade {
+  border: 2px solid #AAFF00;
+  border-radius: 17px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #FFFFFF;
+  padding: 0.2rem 0.95rem; }
+  .Btn-trade:hover {
+    background-color: #AAFF00;
+    color: #000000; }
+
+.Btn-folder {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff; }
+  .Btn-folder:active {
+    background-color: #00C9FF; }
+
+.Btn-rounded {
+  border-radius: 50%; }
+
+.Btn-slide {
+  border: 1px solid #505050;
+  width: 21px;
+  height: 21px; }
 
 .Holder {
   overflow-x: hidden; }
@@ -6235,11 +6301,17 @@ p {
       -webkit-transform: translateX(0);
               transform: translateX(0); } }
 
+.Title-icon {
+  margin-right: 0.5rem; }
+
 .Menu-list-item {
   padding: 0 1.5rem;
   line-height: 3rem; }
   .Menu-list-item a {
     color: #ADAFB2; }
+
+.Menu-list-icon {
+  margin-right: 1.5rem; }
 
 .Content {
   display: -webkit-box;
@@ -6264,7 +6336,6 @@ p {
 
 .Traders {
   background-color: #3DA0CC;
-  position: absolute;
   bottom: 0;
   width: 100%; }
 
@@ -6283,6 +6354,135 @@ p {
 .Traders-account {
   padding: 0.7rem; }
 
+.Media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.Media-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #67D2C8;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 14px;
+  margin-right: 1rem; }
+
+.Media-lead {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem; }
+
+.Media-user {
+  font-size: 1.3rem;
+  color: #ffffff; }
+
+.Media-count {
+  color: #00C9FF;
+  font-weight: 700;
+  font-size: 1.1rem;
+  paddin: 0.1rem;
+  margin-left: 0.5rem; }
+
+.Description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.Description-text {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  width: 440px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #ffffff; }
+
+.has-openDescription {
+  overflow: visible;
+  display: block; }
+
+.Menu-action {
+  background-color: #373737;
+  color: #ffffff; }
+
+.Cards {
+  width: 300px;
+  background-color: #2C2C2C; }
+
+.Cards-top {
+  padding: 1.5rem 1rem; }
+
+.Cards-graphic {
+  padding: 3rem; }
+
+.Cards-content-data {
+  font-weight: 700;
+  font-size: 1.3rem; }
+
+.Coin {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  color: #ffffff; }
+
+.Cards-content-item {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid #505050;
+  border-bottom: 1px solid #505050; }
+  .Cards-content-item:last-of-type {
+    border-botton: 0; }
+  .Cards-content-item h5 {
+    font-size: 1.3rem;
+    font-weight: 400; }
+
+.Hexagon {
+  position: relative;
+  width: 16px;
+  height: 9.24px;
+  background-color: #ffffff;
+  margin: 4.62px 0; }
+
+.Hexagon:before,
+.Hexagon:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent; }
+
+.Hexagon:before {
+  bottom: 100%;
+  border-bottom: 4.62px solid #ffffff; }
+
+.Hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 4.62px solid #ffffff; }
+
+.is-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 /* 6. Helpers */
 .non-gutter {
   padding-left: 0;
@@ -6292,19 +6492,19 @@ p {
   background-color: red; }
 
 .is-green {
-  background-color: green; }
+  background-color: #AAFF00; }
 
 .is-pink {
   background-color: pink; }
 
 .is-purple {
-  background-color: purple; }
+  background-color: #D267C6; }
 
 .is-orange {
-  background-color: orange; }
+  background-color: #FB6533; }
 
 .is-yellow {
-  background-color: yellow; }
+  background-color: #EFAA42; }
 
 .is-blue {
   background-color: blue; }
@@ -6312,13 +6512,25 @@ p {
 .is-white {
   background-color: white; }
 
+.is-black {
+  background-color: #1F1F1F; }
+
+.is-tx-green {
+  color: #AAFF00; }
+
+.is-tx-orange {
+  color: #FB6533; }
+
+.is-tx-white {
+  color: #ffffff; }
+
 .is-hidden-tablet {
   display: none; }
   @media screen and (min-width: 768px) {
     .is-hidden-tablet {
       display: block; } }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .is-hidden-desktop {
     display: none; } }
 
@@ -6344,3 +6556,39 @@ p {
 
 .mr32 {
   margin-right: 20px; }
+
+.mb0 {
+  margin-bottom: 5px; }
+
+.mb1 {
+  margin-bottom: 10px; }
+
+.mb2 {
+  margin-bottom: 20px; }
+
+.ptb0 {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+.ptb1 {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.ptb15 {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+.ptb2 {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.ptb3 {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.u-full {
+  width: 100%; }
+
+.has-border {
+  border-left: 1px solid #505050;
+  border-right: 1px solid #505050; }

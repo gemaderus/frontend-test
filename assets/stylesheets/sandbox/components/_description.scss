@@ -1,0 +1,21 @@
+.Description {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Description-text {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  width: 440px;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: $white;
+}
+
+.has-openDescription {
+  overflow : visible;
+  display: block;
+}

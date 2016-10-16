@@ -1,12 +1,5 @@
 var $ = require('jquery');
-
-// var foo = require('./components/foo');
-
-// $(function(){
-//   foo.attachTo("body");
-
-//   hljs.initHighlightingOnLoad();
-// });
+require('bootstrap-sass');
 
 var buttonOpen = $(".Btn-open");
 var buttonClose = $(".Btn-close");
@@ -24,3 +17,21 @@ buttonClose.on("click", function(e) {
   buttonClose.hide();
 });
 
+var btnDescriptionAction = $(".Btn-description-action");
+var descriptionText = $(".Description-text");
+
+btnDescriptionAction.on("click", function(e) {
+  descriptionText.toggleClass("has-openDescription");
+  // btnDescriptionAction.style.transform = rotate(-180deg);
+});
+
+$(function () {
+  $('[data-toggle="popover"]').popover({
+    placement: 'bottom',
+    html: true,
+    content: function () {
+      var id = $(this).data('content-id');
+      return $('#' + id).html();
+    }
+  })
+});

@@ -1,0 +1,42 @@
+.Cards {
+  width: 300px;
+  background-color: #2C2C2C;
+}
+
+.Cards-top {
+  padding: 1.5rem 1rem;
+}
+
+.Cards-graphic {
+  padding: 3rem;
+}
+
+.Cards-content-data {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.Coin {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  color: $white;
+}
+
+.Cards-content-item {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid #505050;
+  border-bottom: 1px solid #505050;
+
+  &:last-of-type {
+    border-botton: 0;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+}

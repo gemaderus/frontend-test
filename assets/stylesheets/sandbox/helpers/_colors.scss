@@ -3,7 +3,7 @@
 }
 
 .is-green {
-  background-color: green;
+  background-color: #AAFF00;
 }
 
 .is-pink {
@@ -11,15 +11,15 @@
 }
 
 .is-purple {
-  background-color: purple;
+  background-color: #D267C6;
 }
 
 .is-orange {
-  background-color: orange;
+  background-color: #FB6533;
 }
 
 .is-yellow {
-  background-color: yellow;
+  background-color: #EFAA42;
 }
 
 .is-blue {
@@ -28,4 +28,20 @@
 
 .is-white {
   background-color: white;
+}
+
+.is-black {
+  background-color: #1F1F1F;
+}
+
+.is-tx-green {
+  color: #AAFF00;
+}
+
+.is-tx-orange {
+  color: #FB6533;
+}
+
+.is-tx-white {
+  color: $white;
 }
