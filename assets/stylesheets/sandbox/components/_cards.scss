@@ -13,31 +13,44 @@
 .Cards-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
+  .Media-image {
+    color: $white;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    font-weight: 400;
+  }
+}
+
+.Btn-trade {
+  box-shadow: inset 0 0 0 2px #AAFF00;
+  font-weight: 600;
+  font-size: 12px;
+  color: #FFFFFF;
+
+  &:hover {
+    background-color: #AAFF00;
+    color: $black;
+  }
 }
 
 .Cards-graphic {
   padding: 3rem;
 }
 
-.Cards-header-right {
-  span {
-    margin-right: 0.3rem;
-    vertical-align: middle;
+.Number {
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+.Btn:active {
+  .Cards-Icon-folder {
+    fill: $sky-blue;
   }
 }
 
-.Cards-circle {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 16px;
-  color: $white;
-  font-size: 1rem;
-  margin-right: 0.3rem;
-  font-weight: 400;
+.Cards-Icon-folder {
+  fill: $white;
 }
 
 .Cards-initials {
@@ -45,14 +58,21 @@
   margin-right: 0.5rem;
 }
 
-.Cards-content-data {
-  font-weight: 700;
-  font-size: 1.3rem;
-}
-
 .Cards-content-item {
   padding: 1.5rem 1rem;
   border-bottom: 1px solid #505050;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+
+  .Media-image {
+    margin-right: 0.8rem;
+  }
+
+  .Media-body {
+    font-weight: 700;
+    color: $white;
+  }
 
 
   &:last-of-type {
@@ -62,14 +82,5 @@
   &:first-of-type {
     border-top: 1px solid #505050;
   }
-
-  h5 {
-    font-size: 1.3rem;
-    font-weight: 400;
-  }
-}
-
-.Card-content-icon {
-  margin-right: 0.8rem;
 }
 

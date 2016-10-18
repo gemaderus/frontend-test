@@ -65,10 +65,10 @@
 	});
 
 	var btnDescriptionAction = $(".js-button-description");
-	var descriptionText = $(".Description-text");
+	var description = $(".Description");
 
 	btnDescriptionAction.on("click", function(e) {
-	  descriptionText.toggleClass("has-openDescription");
+	  description.toggleClass("has-openDescription");
 	  $(this).toggleClass("has-openDescription");
 	});
 
@@ -80,32 +80,88 @@
 	      var id = $(this).data('content-id');
 	      return $('#' + id).html();
 	    }
-	  }).on('inserted.bs.popover', function () {
+	  }).on('inserted.bs.popover', function (e) {
+	    // e.stopPropagation();
 	    var $this = $(this);
 	    var popoverId = $this.attr('aria-describedby');
 	    var popoverPosition = $this.attr('popover-position');
 	    var $popover = $('#' + popoverId);
 	    if (popoverPosition === 'bottom-left') {
 	      $popover.addClass('bottom-left');
-	      $popover.css('margin-left', ($popover.width() / 2 - $this.outerWidth() / 2 - 15)+'px');
+	      $popover.css('margin-left', ($popover.width() / 2 - $this.outerWidth() / 2 - 10)+'px');
 	    }
 
 	    if (popoverPosition === 'bottom-right') {
 	      $popover.addClass('bottom-right');
-	      $popover.css('margin-left', ($this.outerWidth() / 2 - $popover.width() / 2 + 15)+'px');
+	      $popover.css('margin-left', ($this.outerWidth() / 2 - $popover.width() / 2 + 10)+'px');
+	    }
+	  });
+
+	  // e.stopPropagation()
+	});
+
+
+	$('body').on('click', function(e) {
+	  $('[data-toggle=popover]').each(function() {
+	    // hide any open popovers when the anywhere else in the body is clicked
+	    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+	      $(this).popover('hide');
 	    }
 	  });
 	});
 
 	//D3 graphic
 
-	var h = 58;
-	var w = 172;
-	var padding = [20, 10, 20, 10];
+	var drawStat = function (data, selector, color) {
+	  var h = 58;
+	  var w = 172;
+	  var padding = [5, 10, 5, 10];
+
+	  var xScale = d3.scaleLinear()
+	    .range([padding[3], w - padding[1]]);
+
+	  var yScale = d3.scaleLinear()
+	      .range([h-padding[0], padding[2]]);
+
+	  //Add svg
+
+	  var svg = d3.select(selector)
+	            .append("svg")
+	            .attr("width", w)
+	            .attr("height", h);
+
+	  //Set the domain
+
+	  xScale.domain([1, d3.max(data, function(d) {
+	    return d.month;
+	  })]);
+
+	  yScale.domain([0, d3.max(data, function(d) {
+	    return d.views;
+	  })]);
+
+	  //Define the line
+
+	  var lineGen = d3.line()
+	      // .curve(d3.curveLinear());
+	      .x(function(d) {
+	        return xScale(d.month);
+	      })
+	      .y(function(d) {
+	        return yScale(d.views);
+	      });
+	      // .interpolate("basis");
+
+	  svg.append("path")
+	      .attr("d", lineGen(data))
+	      .attr("stroke", color)
+	      .attr("stroke-width", 2)
+	      .attr("fill", "none");
+	}
 
 	//Graphic 1
 
-	var monthlyViews = [
+	drawStat([
 	  {month: 1, views: 3},
 	  {month: 2, views: 200},
 	  {month: 3, views: 80},
@@ -118,54 +174,11 @@
 	  {month: 10, views: 80},
 	  {month: 11, views: 200},
 	  {month: 12, views: 10}
-	];
-
-	//Set the ranges
-
-	var xScale = d3.scaleLinear()
-	    .range([padding[3], w - padding[1]]);
-
-	var yScale = d3.scaleLinear()
-	    .range([h-padding[0], padding[2]]);
-
-	//Add svg
-
-	var svg = d3.select(".graphic1")
-	          .append("svg")
-	          .attr("width", w)
-	          .attr("height", h);
-
-	//Set the domain
-
-	xScale.domain([1, d3.max(monthlyViews, function(d) {
-	  return d.month;
-	})]);
-
-	yScale.domain([0, d3.max(monthlyViews, function(d) {
-	  return d.views;
-	})]);
-
-	//Define the line
-
-	var lineGen = d3.line()
-	    // .curve(d3.curveLinear());
-	    .x(function(d) {
-	      return xScale(d.month);
-	    })
-	    .y(function(d) {
-	      return yScale(d.views);
-	    });
-	    // .interpolate("basis");
-
-	svg.append("path")
-	    .attr("d", lineGen(monthlyViews))
-	    .attr("stroke", "#D267C6")
-	    .attr("stroke-width", 2)
-	    .attr("fill", "none");
+	], ".graphic1", "#D267C6");
 
 	//Graphic 2
 
-	var monthlyViews = [
+	drawStat([
 	  {month: 1, views: 10},
 	  {month: 2, views: 3000},
 	  {month: 3, views: 150},
@@ -178,54 +191,11 @@
 	  {month: 10, views: 80},
 	  {month: 11, views: 200},
 	  {month: 12, views: 10}
-	];
-
-	//Set the ranges
-
-	var xScale = d3.scaleLinear()
-	    .range([padding[3], w - padding[1]]);
-
-	var yScale = d3.scaleLinear()
-	    .range([h-padding[0], padding[2]]);
-
-	//Add svg
-
-	var svg = d3.select(".graphic2")
-	          .append("svg")
-	          .attr("width", w)
-	          .attr("height", h);
-
-	//Set the domain
-
-	xScale.domain([1, d3.max(monthlyViews, function(d) {
-	  return d.month;
-	})]);
-
-	yScale.domain([0, d3.max(monthlyViews, function(d) {
-	  return d.views;
-	})]);
-
-	//Define the line
-
-	var lineGen = d3.line()
-	    // .curve(d3.curveLinear());
-	    .x(function(d) {
-	      return xScale(d.month);
-	    })
-	    .y(function(d) {
-	      return yScale(d.views);
-	    });
-	    // .interpolate("basis");
-
-	svg.append("path")
-	    .attr("d", lineGen(monthlyViews))
-	    .attr("stroke", "#EFAA42")
-	    .attr("stroke-width", 2)
-	    .attr("fill", "none");
+	], ".graphic2", "#EFAA42");
 
 	//Graphic 3
 
-	var monthlyViews = [
+	drawStat([
 	  {month: 1, views: 3},
 	  {month: 2, views: 1000},
 	  {month: 3, views: 2000},
@@ -238,54 +208,11 @@
 	  {month: 10, views: 600},
 	  {month: 11, views: 1200},
 	  {month: 12, views: 10}
-	];
-
-	//Set the ranges
-
-	var xScale = d3.scaleLinear()
-	    .range([padding[3], w - padding[1]]);
-
-	var yScale = d3.scaleLinear()
-	    .range([h-padding[0], padding[2]]);
-
-	//Add svg
-
-	var svg = d3.select(".graphic3")
-	          .append("svg")
-	          .attr("width", w)
-	          .attr("height", h);
-
-	//Set the domain
-
-	xScale.domain([1, d3.max(monthlyViews, function(d) {
-	  return d.month;
-	})]);
-
-	yScale.domain([0, d3.max(monthlyViews, function(d) {
-	  return d.views;
-	})]);
-
-	//Define the line
-
-	var lineGen = d3.line()
-	    // .curve(d3.curveLinear());
-	    .x(function(d) {
-	      return xScale(d.month);
-	    })
-	    .y(function(d) {
-	      return yScale(d.views);
-	    });
-	    // .interpolate("basis");
-
-	svg.append("path")
-	    .attr("d", lineGen(monthlyViews))
-	    .attr("stroke", "#FB6533")
-	    .attr("stroke-width", 2)
-	    .attr("fill", "none");
+	], ".graphic3", "#FB6533");
 
 	//Graphic 4
 
-	var monthlyViews = [
+	drawStat([
 	  {month: 1, views: 3},
 	  {month: 2, views: 800},
 	  {month: 3, views: 300},
@@ -298,52 +225,51 @@
 	  {month: 10, views: 80},
 	  {month: 11, views: 900},
 	  {month: 12, views: 10}
-	];
+	], ".graphic4", "#BCA5D1");
 
-	//Set the ranges
+	//Slider
+	//
 
-	var xScale = d3.scaleLinear()
-	    .range([padding[3], w - padding[1]]);
+	//Queremos mover cada uno de los li Stat
+	//
 
-	var yScale = d3.scaleLinear()
-	    .range([h-padding[0], padding[2]]);
+	$btnLeft = $("#btn-slide-left");
+	$btnRight = $("#btn-slide-right");
 
-	//Add svg
+	var sliderPhotos = $(".Stats");
 
-	var svg = d3.select(".graphic4")
-	          .append("svg")
-	          .attr("width", w)
-	          .attr("height", h);
+	var offSet = -300;
+	var index = 0;
 
-	//Set the domain
+	function move(index) {
+	  sliderPhotos.style.transform = "translateX("+(offSet*index)+"px";
+	}
 
-	xScale.domain([1, d3.max(monthlyViews, function(d) {
-	  return d.month;
-	})]);
+	function recalculate(index) {
+	  if (index ==8) {
+	    buttonNext.setAttribute("disabled", true);
+	  } else {
+	    buttonNext.removeAttribute("disabled", false);
+	  }
 
-	yScale.domain([0, d3.max(monthlyViews, function(d) {
-	  return d.views;
-	})]);
+	  if (index==0) {
+	    buttonPrev.setAttribute("disabled", true);
+	  } else {
+	    buttonPrev.removeAttribute("disabled", false);
+	  }
+	}
 
-	//Define the line
+	$btnRight.on("click", function() {
+	  index++;
+	  move(index);
+	  recalculate(index);
+	});
 
-	var lineGen = d3.line()
-	    // .curve(d3.curveLinear());
-	    .x(function(d) {
-	      return xScale(d.month);
-	    })
-	    .y(function(d) {
-	      return yScale(d.views);
-	    });
-	    // .interpolate("basis");
-
-	svg.append("path")
-	    .attr("d", lineGen(monthlyViews))
-	    .attr("stroke", "#BCA5D1")
-	    .attr("stroke-width", 2)
-	    .attr("fill", "none");
-
-
+	$btnLeft.on("click", function() {
+	  index--;
+	  move(index);
+	  recalculate(index);
+	})
 
 
 /***/ },

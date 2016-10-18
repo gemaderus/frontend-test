@@ -1,0 +1,57 @@
+.popover.bottom .arrow {
+  top: -8px;
+  border-bottom-color: transparent;
+}
+
+.popover.bottom-left {
+  .arrow {
+    left: 20px !important;
+    right: auto;
+  }
+}
+
+.popover.bottom-right {
+  .arrow {
+    left: auto !important;
+    right: 5px;
+  }
+}
+
+.User-details {
+  border-bottom: 1px solid rgba(80, 80, 80, 0.2);
+  padding: 0.5rem 1rem;
+  width: 150px;
+}
+
+.User-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #4A4A4A;
+  font-size: 1.2rem;
+  padding: 0.7rem 0;
+
+  .Media-image {
+    margin-right: 0.5rem;
+  }
+}
+
+.User-link {
+  color: #4A4A4A;
+  font-size: 1.1rem;
+  padding: 1.2rem 1rem;
+  display: block;
+  line-height: 1.5;
+}
+
+.Order-details {
+  width: 90px;
+  color: #4A4A4A;
+  font-size: 1.3rem;
+  padding: 0 1rem;
+}
+
+.Order-detail {
+  padding: 0.6rem 0;
+}
+

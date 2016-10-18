@@ -28,7 +28,9 @@
 @import "sandbox/components/menu-left";
 @import "sandbox/components/content";
 @import "sandbox/components/stats";
+@import "sandbox/components/switch";
 @import "sandbox/components/traders";
+@import "sandbox/components/popover";
 @import "sandbox/components/media";
 @import "sandbox/components/description";
 @import "sandbox/components/menu-action";
@@ -36,6 +38,9 @@
 @import "sandbox/components/hexagon";
 @import "sandbox/components/flex";
 @import "sandbox/components/graphic";
+@import "sandbox/components/circles";
+@import "sandbox/components/order-action";
+@import "sandbox/components/user-info";
 
 
 /* 6. Helpers */
@@ -48,20 +53,4 @@
 @import "sandbox/helpers/u-full";
 @import "sandbox/helpers/has-border";
 
-.popover.bottom .arrow {
-  top: -8px;
-  border-bottom-color: transparent;
-}
-
-.popover.bottom-left {
-  .arrow {
-    left: 15% !important;
-  }
-}
-
-.popover.bottom-right {
-  .arrow {
-    left: 85% !important;
-  }
-}
 
