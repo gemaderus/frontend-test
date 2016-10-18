@@ -1,7 +1,5 @@
 .Cards {
-  width: 300px;
   background-color: #2C2C2C;
-  display: inline-block;
 }
 
 .Cards-top {
@@ -60,7 +58,7 @@
 
 .Cards-content-item {
   padding: 1.5rem 1rem;
-  border-bottom: 1px solid #505050;
+  border-bottom: 1px solid $border-color;
   font-size: 1.3rem;
   display: flex;
   justify-content: space-between;
@@ -80,7 +78,7 @@
   }
 
   &:first-of-type {
-    border-top: 1px solid #505050;
+    border-top: 1px solid $border-color;
   }
 }
 

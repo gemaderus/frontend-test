@@ -2,7 +2,7 @@
   background-color: #3DA0CC;
   bottom: 0;
   width: 100%;
-  // position: absolute;
+  position: absolute;
 }
 
 .Traders-item {
@@ -88,7 +88,7 @@
 // }
 
 .Traders-account {
-  padding: 0.7rem;
+  padding: 0.75rem;
   color: #4A4A4A;
   text-transform: uppercase;
   text-align: center;
@@ -102,4 +102,5 @@
     background-color: #E6E6E6;
   }
 }
+
 

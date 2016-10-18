@@ -6145,7 +6145,9 @@ p {
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s; }
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  background-color: #202020;
+  padding: 2.2rem 0; }
   .has-menuOpen .Main-content {
     -webkit-transform: translateX(188px);
             transform: translateX(188px); }
@@ -6303,7 +6305,8 @@ p {
 .Traders {
   background-color: #3DA0CC;
   bottom: 0;
-  width: 100%; }
+  width: 100%;
+  position: absolute; }
 
 .Traders-item {
   padding: 0 1.5rem;
@@ -6332,7 +6335,7 @@ p {
   margin-left: auto; }
 
 .Traders-account {
-  padding: 0.7rem;
+  padding: 0.75rem;
   color: #4A4A4A;
   text-transform: uppercase;
   text-align: center; }
@@ -6443,13 +6446,12 @@ p {
             transform: scaleY(-1); }
 
 .Menu-action {
+  padding: 1.6rem 0;
   background-color: #373737;
   color: #ffffff; }
 
 .Cards {
-  width: 300px;
-  background-color: #2C2C2C;
-  display: inline-block; }
+  background-color: #2C2C2C; }
 
 .Cards-top {
   padding: 1.5rem 1rem;
@@ -6565,8 +6567,13 @@ p {
     margin-right: 8px;
     color: #ffffff; }
 
-.User-info .Media-image {
-  margin-right: 1rem; }
+.User-info {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #505050; }
+  .User-info .Media {
+    margin-bottom: 1.6rem; }
+  .User-info .Media-image {
+    margin-right: 1rem; }
 
 .User-strategic {
   margin-bottom: 0.3rem;
@@ -6580,6 +6587,11 @@ p {
   padding: 0 0.4rem;
   margin-left: 0.5rem;
   border-radius: 2px; }
+
+.Slider-control {
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 1.8rem; }
 
 /* 6. Helpers */
 .non-gutter {

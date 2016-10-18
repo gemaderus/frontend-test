@@ -1,4 +1,11 @@
 .User-info {
+  padding-bottom: 16px;
+  border-bottom: 1px solid $border-color;
+
+  .Media {
+    margin-bottom: 1.6rem;
+  }
+
   .Media-image {
     margin-right: 1rem;
   }

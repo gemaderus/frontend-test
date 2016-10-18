@@ -136,10 +136,9 @@
     </div>
     <ul class="Traders-items">
       <li class="Traders-item">
-        <a href="#" class="va-center m-l-1">
+        <a href="#" class="Traders-item-link va-center">
           <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-          <svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="Traders-itemIcon">
-              <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+          <svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="Traders-itemIcon
               <title>Shape</title>
               <desc>Created with Sketch.</desc>
               <defs></defs>
@@ -161,7 +160,7 @@
         </a>
       </li>
       <li class="Traders-item">
-        <a href="#" class="va-center m-l-1">
+        <a href="#" class="Traders-item-link va-center">
           <?xml version="1.0" encoding="UTF-8" standalone="no"?>
             <svg width="11px" height="16px" viewBox="0 0 11 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="Traders-itemIcon">
                 <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
@@ -188,7 +187,7 @@
         </a>
       </li>
       <li class="Traders-item">
-        <a href="#" class="va-center m-l-1">
+        <a href="#" class="Traders-item-link va-center">
           <?xml version="1.0" encoding="UTF-8" standalone="no"?>
             <svg width="16px" height="9px" viewBox="0 0 16 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="Traders-itemIcon">
                 <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
@@ -213,7 +212,7 @@
         </a>
       </li>
       <li class="Traders-item">
-        <a href="#" class="va-center m-l-1">
+        <a href="#" class="Traders-item-link va-center">
           <?xml version="1.0" encoding="UTF-8" standalone="no"?>
             <svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="Traders-itemIcon">
                 <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
@@ -238,7 +237,7 @@
         </a>
       </li>
       <li class="Traders-item">
-        <a href="#" class="va-center m-l-1">
+        <a href="#" class="Traders-item-link va-center">
           <?xml version="1.0" encoding="UTF-8" standalone="no"?>
             <svg width="15px" height="12px" viewBox="0 0 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="Traders-itemIcon">
                 <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
@@ -264,7 +263,7 @@
       </li>
     </ul>
     <div class="Traders-account">
-      <button class="Btn Btn-account">Create account</button>
+      <button class="Btn Btn-base Btn--semirounded text-uppercase Btn-base--big Btn-account">Create account</button>
     </div>
   </div>
 </div>
@@ -272,48 +271,166 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="row is-red">
-          <div class="col-xs-2 col-sm-2 col-md-2">Avatar</div>
+        {% include "partials/user-info.html" %}
+
+        <!-- <div class="row is-red">
+          <div class="col-xs-2 col-sm-2 col-md-12">Avatar</div>
           <div class="col-xs-10 col-sm-10 col-md-10">Nombre</div>
         </div>
         <div class="row is-white">
          <div class="col-xs-12 col-sm-12 col-md-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates atque, quo libero iusto mollitia, nemo cumque, blanditiis sint qui tempore nobis impedit accusantium numquam. Numquam delectus, esse voluptatum dicta. Modi.</div>
+        </div> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="Menu-action">
+          <div class="row">
+             <div class="col-xs-2 col-sm-2 col-md-1">
+               <button class="Btn">
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg width="26px" height="15px" viewBox="0 0 26 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>list-icon</title>
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="001-prueba-maquetacion" transform="translate(-210.000000, -224.000000)" fill="#6C6C6C">
+                      <g id="herramientas-filtrado" transform="translate(194.000000, 206.000000)">
+                        <g id="filtrado-alldarwins">
+                          <g id="Group-8">
+                            <g id="list-icon" transform="translate(16.000000, 18.000000)">
+                                <path d="M0,3 L3,3 L3,0 L0,0 L0,3 L0,3 Z M5.6,0 L5.6,3 L25.6,3 L25.6,0 L5.6,0 L5.6,0 Z" id="Shape"></path>
+                                <path d="M0,15 L3,15 L3,12 L0,12 L0,15 L0,15 Z M5.6,12 L5.6,15 L25.6,15 L25.6,12 L5.6,12 L5.6,12 Z" id="Shape-Copy-5"></path>
+                                <path d="M0,9 L3,9 L3,6 L0,6 L0,9 L0,9 Z M5.6,6 L5.6,9 L25.6,9 L25.6,6 L5.6,6 L5.6,6 Z" id="Shape-Copy-6"></path>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+             </div>
+            <div class="col-xs-2 col-sm-2 col-md-1">
+              <button class="Btn">
+                <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>card-icon</title>
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="001-prueba-maquetacion" transform="translate(-271.000000, -223.000000)" class="Cards-Icon-folder">
+                          <g id="herramientas-filtrado" transform="translate(194.000000, 206.000000)">
+                              <g id="filtrado-alldarwins">
+                                  <g id="Group-8">
+                                      <path d="M87.1457557,17.4968944 C87.1457557,17.2219462 86.9238095,17 86.6488613,17 L83.3031056,17 C83.0281573,17 82.8062112,17.2219462 82.8062112,17.4968944 L82.8062112,20.8443064 C82.8062112,21.1192547 83.0281573,21.3412008 83.3031056,21.3412008 L86.6488613,21.3412008 C86.9238095,21.3412008 87.1457557,21.1192547 87.1457557,20.8443064 L87.1457557,17.4968944 Z M92.9378882,17.4968944 C92.9378882,17.2219462 92.715942,17 92.4409938,17 L89.0952381,17 C88.8202733,17 88.5983437,17.2219462 88.5983437,17.4968944 L88.5983437,20.8443064 C88.5983437,21.1192547 88.8202733,21.3412008 89.0952381,21.3412008 L92.4426501,21.3412008 C92.7176149,21.3412008 92.9395445,21.1192547 92.9395445,20.8443064 L92.9395445,17.4968944 L92.9378882,17.4968944 Z M81.3536232,23.3204969 C81.3536232,23.0455487 81.131677,22.8236025 80.8567288,22.8236025 L77.5109731,22.8236025 C77.2360248,22.8236025 77.0140787,23.0455487 77.0140787,23.3204969 L77.0140787,26.6662526 C77.0140787,26.9412008 77.2360248,27.163147 77.5109731,27.163147 L80.8583851,27.163147 C81.1333333,27.163147 81.3552795,26.9412008 81.3552795,26.6662526 L81.3552795,23.3204969 L81.3536232,23.3204969 Z M87.1457557,23.3204969 C87.1457557,23.0455487 86.9238095,22.8236025 86.6488613,22.8236025 L83.3031056,22.8236025 C83.0281573,22.8236025 82.8062112,23.0455487 82.8062112,23.3204969 L82.8062112,26.6662526 C82.8062112,26.9412008 83.0281573,27.163147 83.3031056,27.163147 L86.6488613,27.163147 C86.9238095,27.163147 87.1457557,26.9412008 87.1457557,26.6662526 L87.1457557,23.3204969 Z M92.9378882,23.3204969 C92.9378882,23.0455487 92.715942,22.8236025 92.4409938,22.8236025 L89.0952381,22.8236025 C88.8202733,22.8236025 88.5983437,23.0455487 88.5983437,23.3204969 L88.5983437,26.6662526 C88.5983437,26.9412008 88.8202733,27.163147 89.0952381,27.163147 L92.4426501,27.163147 C92.7176149,27.163147 92.9395445,26.9412008 92.9395445,26.6662526 L92.9395445,23.3204969 L92.9378882,23.3204969 Z M80.8567288,28.6455487 L77.5109731,28.6455487 C77.2360248,28.6455487 77.0140787,28.8674948 77.0140787,29.1424431 L77.0140787,32.4898551 C77.0140787,32.7648364 77.2360248,32.9867495 77.5109731,32.9867495 L80.8583851,32.9867495 C81.1333333,32.9867495 81.3552795,32.7648364 81.3552795,32.4898551 L81.3552795,29.1424431 C81.3536232,28.8691511 81.131677,28.6455487 80.8567288,28.6455487 Z M86.6488613,28.6455487 L83.3031056,28.6455487 C83.0281573,28.6455487 82.8062112,28.8674948 82.8062112,29.1424431 L82.8062112,32.4898551 C82.8062112,32.7648364 83.0281573,32.9867495 83.3031056,32.9867495 L86.6488613,32.9867495 C86.9238095,32.9867495 87.1457557,32.7648364 87.1457557,32.4898551 L87.1457557,29.1424431 C87.1457557,28.8691511 86.923793,28.6455487 86.6488613,28.6455487 Z M92.4409938,28.6455487 L89.0952381,28.6455487 C88.8202733,28.6455487 88.5983437,28.8674948 88.5983437,29.1424431 L88.5983437,32.4898551 C88.5983437,32.7648364 88.8202733,32.9867495 89.0952381,32.9867495 L92.4426501,32.9867495 C92.7176149,32.9867495 92.9395445,32.7648364 92.9395445,32.4898551 L92.9395445,29.1424431 C92.9378882,28.8691511 92.715942,28.6455487 92.4409938,28.6455487 Z M81.3536232,17.4968944 C81.3536232,17.2219462 81.131677,17 80.8567288,17 L77.5109731,17 C77.2360248,17 77.0140787,17.2219462 77.0140787,17.4968944 L77.0140787,20.8443064 C77.0140787,21.1192547 77.2360248,21.3412008 77.5109731,21.3412008 L80.8583851,21.3412008 C81.1333333,21.3412008 81.3552795,21.1192547 81.3552795,20.8443064 L81.3552795,17.4968944 L81.3536232,17.4968944 Z" id="card-icon"></path>
+                                  </g>
+                              </g>
+                          </g>
+                      </g>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <div class="is-flex">
+                <span class="is-tx-white mr1">In Portfolio</span>
+                <div class="Switch">
+                  <input type="checkbox" class ="Switch-input" id="Switch">
+                  <label for="Switch" class="Switch-label"></label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-5">Column4</div>
+            <div class="col-xs-2 col-sm-2 col-md-2">
+              <div class="Order-action">
+                <button type="button" class="Btn" data-toggle="popover" data-content-id="popover-order" popover-position="bottom-right">
+                  <span>Order by Return</span>
+                  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                  <svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xl
+                      <title>Shape</title>
+                      <desc>Created with Sketch.</desc>
+                      <defs></defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="001-prueba-maquetacion-desktop" transform="translate(-651.000000, -146.000000)" fill="#D8D8D8">
+                              <g id="cabecera" transform="translate(194.000000, 73.000000)">
+                                  <g id="Nivel" transform="translate(0.000000, 64.000000)">
+                                      <path d="M464.089416,8.13758439 C464.351377,7.87731951 464.351377,7.45539897 464.089416,7.19517099 C463.827491,6.934943 463.402766,6.934943 463.140805,7.19517099 L459.194112,11.1203195 C459.054517,11.2589921 458.991692,11.4434463 459.000878,11.6249862 C458.991692,11.8065629 459.054517,11.9909802 459.194112,12.1296897 L463.140805,16.0548013 C463.402766,16.3150662 463.827454,16.3150662 464.089416,16.0548013 C464.351377,15.7945734 464.351377,15.3726528 464.089416,15.1124617 L460.582831,11.6249862 L464.089416,8.13758439 Z" id="Shape" transform="translate(461.642943, 11.625000) rotate(-90.000000) translate(-461.642943, -11.625000) "></path>
+                                  </g>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="Menu">
+        <div class="Slider-control">
             <div class="row">
-             <div class="col-xs-2 col-sm-2 col-md-1 is-purple">Column1</div>
-             <div class="col-xs-2 col-sm-2 col-md-1 is-yellow">Column2</div>
-             <div class="col-xs-3 col-sm-3 col-md-3 is-orange">Column3</div>
-             <div class="col-xs-3 col-sm-3 col-md-5 is-blue">Column4</div>
-             <div class="col-xs-2 col-sm-2 col-md-2 is-red">Column5</div>
+              <div class="col-xs-3 col-sm-3 col-md-10">729 Darwins encontrados</div>
+              <div class="col-xs-3 col-sm-3 col-md-2 text-right">
+                <button class="Btn Btn--rounded Btn-slide" id="btn-slide-left">
+                  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                    <svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xli
+                        <title>Shape</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="001-prueba-maquetacion-desktop" transform="translate(-971.000000, -277.000000)" fill="#D8D8D8">
+                                <g id="herramientas-filtrado" transform="translate(194.000000, 206.000000)">
+                                    <g id="Group-8" transform="translate(769.000000, 65.000000)">
+                                        <path d="M9.58283059,10.6249862 L13.0894156,7.13758439 C13.3513775,6.87731951 13.3513775,6.45539897 13.0894156,6.19517099 C12.8274906,5.934943 12.4027664,5.934943 12.1408045,6.19517099 L8.19411181,10.1203195 C8.05451687,10.2589921 7.99169177,10.4434463 8.00087759,10.6249862 C7.99169177,10.8065629 8.05451687,10.9909802 8.19411181,11.1296897 L12.1408045,15.0548013 C12.4027664,15.3150662 12.8274537,15.3150662 13.0894156,15.0548013 C13.3513775,14.7945734 13.3513775,14.3726528 13.0894156,14.1124617 L9.58283059,10.6249862 L9.58283059,10.6249862 Z" id="Shape"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <button class="Btn Btn--rounded Btn-slide" id="btn-slide-right">
+                  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+                  <svg width="6px" height="10px" viewBox="0 0 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xl
+                      <title>Shape</title>
+                      <desc>Created with Sketch.</desc>
+                      <defs></defs>
+                      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                          <g id="001-prueba-maquetacion-desktop" transform="translate(-1001.000000, -277.000000)" fill="#D8D8D8">
+                              <g id="herramientas-filtrado" transform="translate(194.000000, 206.000000)">
+                                  <g id="Group-8" transform="translate(769.000000, 65.000000)">
+                                      <path d="M39.5828306,10.6249862 L43.0894156,7.13758439 C43.3513775,6.87731951 43.3513775,6.45539897 43.0894156,6.19517099 C42.8274906,5.934943 42.4027664,5.934943 42.1408045,6.19517099 L38.1941118,10.1203195 C38.0545169,10.2589921 37.9916918,10.4434463 38.0008776,10.6249862 C37.9916918,10.8065629 38.0545169,10.9909802 38.1941118,11.1296897 L42.1408045,15.0548013 C42.4027664,15.3150662 42.8274537,15.3150662 43.0894156,15.0548013 C43.3513775,14.7945734 43.3513775,14.3726528 43.0894156,14.1124617 L39.5828306,10.6249862 L39.5828306,10.6249862 Z" id="Shape" transform="translate(40.642943, 10.625000) rotate(-180.000000) translate(-40.642943, -10.625000) "></path>
+                                  </g>
+                              </g>
+                          </g>
+                      </g>
+                  </svg>
+                </button>
+              </div>
             </div>
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="Card">
             <div class="row">
-             <div class="col-xs-12 col-sm-12 col-md-10 is-blue">Column1</div>
-             <div class="col-xs-12 col-sm-12 col-md-2 is-red">Column2</div>
-            </div>
-            <div class="row">
               <div class="col-xs-12">
                 <div class="Stats">
-                <ul class="Stats-list is-blue">
-                 <li class="Stat is-orange">Column1</li>
-                 <li class="Stat is-green">Column2</li>
-                 <li class="Stat is-yellow">Column3</li>
-                 <li class="Stat is-pink">Column4</li>
-                 <li class="Stat is-yellow">Column5</li>
-                 <li class="Stat is-yellow">Column6</li>
-                 <li class="Stat is-yellow">Column7</li>
-                 <li class="Stat is-yellow">Column8</li>
-                </ul>
+                  {% include "partials/cards.html" %}
+                  <!-- <ul class="Stats-list is-blue">
+                   <li class="Stat is-orange">Column1</li>
+                   <li class="Stat is-green">Column2</li>
+                   <li class="Stat is-yellow">Column3</li>
+                   <li class="Stat is-pink">Column4</li>
+                   <li class="Stat is-yellow">Column5</li>
+                   <li class="Stat is-yellow">Column6</li>
+                   <li class="Stat is-yellow">Column7</li>
+                   <li class="Stat is-yellow">Column8</li>
+                  </ul> -->
                 </div>
               </div>
             </div>
@@ -323,5 +440,12 @@
   </div>
 </div>
 
+<script type="text/template" id="popover-user">
+  {% include "partials/popover-user.html" %}
+</script>
+
+<script type="text/template" id="popover-order">
+  {% include "partials/popover-order.html" %}
+</script>
 
 {% endblock %}
