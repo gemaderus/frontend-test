@@ -12,7 +12,7 @@ You'll need to have the following items installed before continuing.
 ## Quickstart
 
 ```bash
-git clone git@github.com:gemaderus/origen.git
+git clone git@github.com:gemaderus/frontend-test.git
 npm install
 ```
 
