@@ -4,22 +4,22 @@
 
 .Stats-list {
   white-space: nowrap;
+  position: relative;
 }
 
 .Stat {
   display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
   width: calc(33.3333% - 8px);
-  margin-right: 16px;
 
   &:last-child {
     margin-right: 0;
   }
 
-  @media (min-width: 1600px) {
+  @media (min-width: $screen-lg) {  // in order to be visible in laptop screen :)
     & {
-      width: calc(25% - 45px);
+      width: calc(25% - 10px);
     }
-
   }
-
 }

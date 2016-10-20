@@ -1,13 +1,5 @@
-.is-red {
-  background-color: red;
-}
-
 .is-green {
   background-color: #AAFF00;
-}
-
-.is-pink {
-  background-color: pink;
 }
 
 .is-purple {
@@ -24,10 +16,6 @@
 
 .is-yellow {
   background-color: #EFAA42;
-}
-
-.is-blue {
-  background-color: blue;
 }
 
 .is-white {
@@ -49,3 +37,8 @@
 .is-tx-white {
   color: $white;
 }
+
+.is-tx-black {
+  color: #1F1F1F;
+}
+

@@ -1,5 +1,16 @@
 .Slider-control {
   color: $white;
   font-size: 1.2rem;
-  padding: 1.8rem;
+  padding: 1.8rem 0;
+}
+
+.Btn-slide {
+  border: 1px solid #505050;
+  height: 21px;
+  width: 21px;
+}
+
+.Btn-slide:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
 }

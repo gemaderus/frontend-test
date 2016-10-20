@@ -1,35 +1,57 @@
 .Description {
-  display: flex;
   align-items: flex-start;
+  display: flex;
+  max-width: 440px;
+
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2rem;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 1.2rem * 3;
+  /* fix problem when last visible word doesn't adjoin right side  */
+  text-align: justify;
+  /* place for '...' */
+  margin-right: -1em;
+  padding-right: 1em;
+
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+  }
+
+  &.has-openDescription {
+    max-height: 1.2rem * 10;
+
+    &:before {
+      content: '';
+    }
+  }
 }
 
 .Description-text {
+  color: $white;
   font-size: 1.3rem;
   line-height: 1.8rem;
-  width: 440px;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  color: $white;
   position: relative;
+  width: calc(100% - 25px);
 
   &:after {
-    content: "";
-    text-align: right;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 1.3rem;
     background-image: linear-gradient(-180deg, rgba(32,32,32,0.00) 0%, #202020 100%);
+    top: 2rem;
+    content: "";
+    height: 1.5rem;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    left: 0;
   }
 
   .has-openDescription & {
-    overflow : visible;
     display: block;
     height: 100%;
+    overflow : visible;
 
     &:after {
       background-image: none;
@@ -39,8 +61,11 @@
 
 .Description-button {
   margin-top: 4px;
+  margin-left: auto;
 
-  &.has-openDescription {
+  .has-openDescription & {
     transform: scaleY(-1);
   }
 }
+
+

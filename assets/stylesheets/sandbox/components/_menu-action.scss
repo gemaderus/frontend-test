@@ -1,7 +1,52 @@
 .Menu-action {
-  padding: 1.6rem 0;
-  // padding: 1.5rem 0;
   background-color: $lightest-black;
   color: $white;
+  font-size: 1.3rem;
+  text-align: center;
+
+  .Btn {
+    font-size: 1.3rem;
+  }
 }
 
+.Menu-action-items {
+  align-items: center;
+  display: flex;
+  height: 50px;
+
+  &:first-child {
+    border-right: 1px solid $border-color;
+  }
+
+  &:last-child {
+    border-left: 1px solid $border-color;
+    padding: 0 2rem;
+  }
+}
+
+.Btn-fixed {
+  height: 50px;
+  width: 56px;
+}
+
+.Menu-action-item {
+  min-width: 56px;
+  padding: 0 1.5rem;
+
+  &.non-padding {
+    padding: 0;
+  }
+}
+
+.Menu-action-Icon {
+  fill: #6C6C6C;
+}
+
+.is-active {
+  .Btn-fixed {
+    background-color: $light-black;
+  }
+  .Menu-action-Icon {
+    fill: $sky-blue;
+  }
+}

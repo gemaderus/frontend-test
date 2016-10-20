@@ -3,9 +3,9 @@
 }
 
 .Cards-top {
-  padding: 1.5rem 1rem;
   font-size: 1.3rem;
   font-weight: 600;
+  padding: 1.5rem 1rem;
 }
 
 .Cards-header {
@@ -15,16 +15,16 @@
   .Media-image {
     color: $white;
     font-size: 1rem;
-    margin-right: 0.5rem;
     font-weight: 400;
+    margin-right: 0.5rem;
   }
 }
 
 .Btn-trade {
   box-shadow: inset 0 0 0 2px #AAFF00;
-  font-weight: 600;
-  font-size: 12px;
   color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 600;
 
   &:hover {
     background-color: #AAFF00;
@@ -32,13 +32,14 @@
   }
 }
 
-.Cards-graphic {
-  padding: 3rem;
-}
-
 .Number {
+  color: #AAFF00;
   margin-right: 0.3rem;
   vertical-align: middle;
+}
+
+.Cards-Icon-folder {
+  fill: $white;
 }
 
 .Btn:active {
@@ -47,38 +48,37 @@
   }
 }
 
-.Cards-Icon-folder {
-  fill: $white;
-}
 
 .Cards-initials {
   color: $white;
   margin-right: 0.5rem;
 }
 
+.Cards-content {
+  border-top: 1px solid $border-color;
+}
+
 .Cards-content-item {
-  padding: 1.5rem 1rem;
   border-bottom: 1px solid $border-color;
-  font-size: 1.3rem;
   display: flex;
+  font-size: 1.3rem;
   justify-content: space-between;
+  padding: 1.5rem 1rem;
+
+  &:last-child {
+    border-bottom: 0;
+  }
 
   .Media-image {
     margin-right: 0.8rem;
   }
 
   .Media-body {
-    font-weight: 700;
     color: $white;
-  }
-
-
-  &:last-of-type {
-    border-botton: 0;
-  }
-
-  &:first-of-type {
-    border-top: 1px solid $border-color;
+    font-weight: 700;
   }
 }
 
+.Graphic {
+  padding: 3.4rem 1rem;
+}

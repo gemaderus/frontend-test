@@ -1,0 +1,36 @@
+.is-list {
+  .Cards {
+    display: flex;
+  }
+
+  .Stat {
+    width: 100%;
+    display: block;
+    margin: auto;
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: 60%;
+    }
+  }
+
+  .Cards-top {
+    flex-basis: 50%;
+  }
+
+  .Cards-content {
+    flex-basis: 50%;
+  }
+
+  .Cards-content {
+    border-top: 0;
+  }
+
+  .Btn-slide {
+    display: none;
+  }
+}

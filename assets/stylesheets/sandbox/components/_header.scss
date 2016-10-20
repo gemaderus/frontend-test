@@ -1,10 +1,32 @@
-.Header{
+.Header {
   background-color: $black;
   padding: 1.25rem 0;
 
   svg {
     display: block;
   }
+
+  .Btn {
+    min-height: 25px;
+  }
 }
 
+.Btn.Btn-open {
+
+  .has-menuOpen & {
+    display: none;
+  }
+
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+.Btn.Btn-close {
+  display: none;
+
+  .has-menuOpen & {
+    display: block;
+  }
+}
 

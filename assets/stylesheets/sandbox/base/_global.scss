@@ -21,11 +21,38 @@ html {
   line-height: 1.5;
 }
 
-html,
-body {
+html {
   height: 100%;
 }
 
 body {
   overflow-x: hidden;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * These values will not show up in content, but can be
+ * queried by JavaScript to know which breakpoint is active.
+ * Add or remove as many breakpoints as you like.
+ */
+body:before {
+  content: "mobile";
+  display: none; /* Prevent from displaying. */
+}
+@media (min-width: $screen-sm) {
+  body:before {
+    content: "tablet";
+  }
+}
+@media (min-width: $screen-md) {
+  body:before {
+    content: "desktop";
+  }
+}
+@media (min-width: $screen-lg) {
+  body:before {
+    content: "bigdesktop";
+  }
 }

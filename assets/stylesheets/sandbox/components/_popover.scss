@@ -1,6 +1,6 @@
 .popover.bottom .arrow {
-  top: -8px;
   border-bottom-color: transparent;
+  top: -8px;
 }
 
 .popover.bottom-left {
@@ -24,11 +24,11 @@
 }
 
 .User-detail {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
   color: #4A4A4A;
+  display: flex;
   font-size: 1.2rem;
+  justify-content: space-between;
   padding: 0.7rem 0;
 
   .Media-image {
@@ -38,20 +38,23 @@
 
 .User-link {
   color: #4A4A4A;
-  font-size: 1.1rem;
-  padding: 1.2rem 1rem;
   display: block;
+  font-size: 1.1rem;
   line-height: 1.5;
+  padding: 1.2rem 1rem;
 }
 
 .Order-details {
-  width: 90px;
   color: #4A4A4A;
   font-size: 1.3rem;
-  padding: 0 1rem;
+  width: 90px;
 }
 
 .Order-detail {
-  padding: 0.6rem 0;
+  padding: 0.6rem 1rem;
+
+   &:hover {
+    background-color: #E6E6E6;
+  }
 }
 

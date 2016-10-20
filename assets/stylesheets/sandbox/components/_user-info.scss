@@ -1,6 +1,7 @@
 .User-info {
-  padding-bottom: 16px;
   border-bottom: 1px solid $border-color;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
 
   .Media {
     margin-bottom: 1.6rem;
@@ -12,16 +13,16 @@
 }
 
 .User-strategic {
-  margin-bottom: 0.3rem;
   font-size: 1.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .Btn-counter {
   background: #505050;
-  color: $sky-blue;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 0 0.4rem;
-  margin-left: 0.5rem;
   border-radius: 2px;
+  color: $sky-blue;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  padding: 0 0.4rem;
 }

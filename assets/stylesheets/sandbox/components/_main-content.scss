@@ -1,8 +1,8 @@
 .Main-content {
-  width: 100%;
-  transition: transform 0.3s;
   background-color: $light-black;
   padding: 2.2rem 0;
+  transition: transform 0.3s;
+  width: 100%;
 
   .has-menuOpen & {
     transform: translateX(188px);
@@ -13,8 +13,8 @@
 
     &,
     .has-menuOpen & {
-      transition: none;
       transform: translateX(0);
+      transition: none;
     }
   }
 }

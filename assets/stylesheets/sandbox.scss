@@ -24,7 +24,6 @@
 @import "sandbox/components/header";
 @import "sandbox/components/main-content";
 @import "sandbox/components/buttons";
-@import "sandbox/components/holder";
 @import "sandbox/components/menu-left";
 @import "sandbox/components/content";
 @import "sandbox/components/stats";
@@ -37,21 +36,18 @@
 @import "sandbox/components/cards";
 @import "sandbox/components/hexagon";
 @import "sandbox/components/flex";
-@import "sandbox/components/graphic";
 @import "sandbox/components/circles";
 @import "sandbox/components/order-action";
 @import "sandbox/components/user-info";
 @import "sandbox/components/slider-control";
+@import "sandbox/components/is-list";
 
 
 /* 6. Helpers */
 
-@import "sandbox/helpers/non-gutter";
+@import "sandbox/helpers/bold";
 @import "sandbox/helpers/colors";
-@import "sandbox/helpers/display";
 @import "sandbox/helpers/v-align";
 @import "sandbox/helpers/whitespaces";
-@import "sandbox/helpers/u-full";
-@import "sandbox/helpers/has-border";
 
 

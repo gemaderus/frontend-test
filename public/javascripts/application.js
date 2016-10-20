@@ -48,296 +48,25 @@
 	__webpack_require__(2);
 	var d3 = __webpack_require__(3);
 
-	var buttonOpen = $(".Btn-open");
-	var buttonClose = $(".Btn-close");
-	var $content = $(".js-content")
+	__webpack_require__(4);
+	__webpack_require__(5);
+	__webpack_require__(6);
+	__webpack_require__(7);
+	__webpack_require__(8);
+	__webpack_require__(9);
 
-	buttonOpen.on("click", function(e) {
-	  $content.toggleClass("has-menuOpen", true);
-	  buttonOpen.hide();
-	  buttonClose.show();
-	});
+	var breakpoint = __webpack_require__(10);
+	var slider = __webpack_require__(11);
 
-	buttonClose.on("click", function(e) {
-	  $content.toggleClass("has-menuOpen", false);
-	  buttonOpen.show();
-	  buttonClose.hide();
-	});
-
-	var btnDescriptionAction = $(".js-button-description");
-	var description = $(".Description");
-
-	btnDescriptionAction.on("click", function(e) {
-	  description.toggleClass("has-openDescription");
-	  $(this).toggleClass("has-openDescription");
-	});
-
-	$(function () {
-	  $('[data-toggle="popover"]').popover({
-	    placement: 'bottom',
-	    html: true,
-	    content: function () {
-	      var id = $(this).data('content-id');
-	      return $('#' + id).html();
-	    }
-	  }).on('inserted.bs.popover', function (e) {
-	    // e.stopPropagation();
-	    var $this = $(this);
-	    var popoverId = $this.attr('aria-describedby');
-	    var popoverPosition = $this.attr('popover-position');
-	    var $popover = $('#' + popoverId);
-	    if (popoverPosition === 'bottom-left') {
-	      $popover.addClass('bottom-left');
-	      $popover.css('margin-left', ($popover.width() / 2 - $this.outerWidth() / 2 - 10)+'px');
-	    }
-
-	    if (popoverPosition === 'bottom-right') {
-	      $popover.addClass('bottom-right');
-	      $popover.css('margin-left', ($this.outerWidth() / 2 - $popover.width() / 2 + 10)+'px');
-	    }
-	  });
-
-	  // e.stopPropagation()
-	});
-
-
-	$('body').on('click', function(e) {
-	  $('[data-toggle=popover]').each(function() {
-	    // hide any open popovers when the anywhere else in the body is clicked
-	    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-	      $(this).popover('hide');
-	    }
-	  });
-	});
-
-	//D3 graphic
-
-	var drawStat = function (data, selector, color) {
-	  var h = 58;
-	  var w = 172;
-	  var padding = [5, 10, 5, 10];
-
-	  var xScale = d3.scaleLinear()
-	    .range([padding[3], w - padding[1]]);
-
-	  var yScale = d3.scaleLinear()
-	      .range([h-padding[0], padding[2]]);
-
-	  //Add svg
-
-	  var svg = d3.select(selector)
-	            .append("svg")
-	            .attr("width", w)
-	            .attr("height", h);
-
-	  //Set the domain
-
-	  xScale.domain([1, d3.max(data, function(d) {
-	    return d.month;
-	  })]);
-
-	  yScale.domain([0, d3.max(data, function(d) {
-	    return d.views;
-	  })]);
-
-	  //Define the line
-
-	  var lineGen = d3.line()
-	      // .curve(d3.curveLinear());
-	      .x(function(d) {
-	        return xScale(d.month);
-	      })
-	      .y(function(d) {
-	        return yScale(d.views);
-	      });
-	      // .interpolate("basis");
-
-	  svg.append("path")
-	      .attr("d", lineGen(data))
-	      .attr("stroke", color)
-	      .attr("stroke-width", 2)
-	      .attr("fill", "none");
-	}
-
-	//Graphic 1
-
-	drawStat([
-	  {month: 1, views: 3},
-	  {month: 2, views: 200},
-	  {month: 3, views: 80},
-	  {month: 4, views: 700},
-	  {month: 5, views: 300},
-	  {month: 6, views: 150},
-	  {month: 7, views: 600},
-	  {month: 8, views: 800},
-	  {month: 9, views: 340},
-	  {month: 10, views: 80},
-	  {month: 11, views: 200},
-	  {month: 12, views: 10}
-	], ".graphic1", "#D267C6");
-
-	//Graphic 2
-
-	drawStat([
-	  {month: 1, views: 10},
-	  {month: 2, views: 3000},
-	  {month: 3, views: 150},
-	  {month: 4, views: 20},
-	  {month: 5, views: 1000},
-	  {month: 6, views: 1200},
-	  {month: 7, views: 3000},
-	  {month: 8, views: 800},
-	  {month: 9, views: 340},
-	  {month: 10, views: 80},
-	  {month: 11, views: 200},
-	  {month: 12, views: 10}
-	], ".graphic2", "#EFAA42");
-
-	//Graphic 3
-
-	drawStat([
-	  {month: 1, views: 3},
-	  {month: 2, views: 1000},
-	  {month: 3, views: 2000},
-	  {month: 4, views: 700},
-	  {month: 5, views: 100},
-	  {month: 6, views: 1200},
-	  {month: 7, views: 600},
-	  {month: 8, views: 1800},
-	  {month: 9, views: 1040},
-	  {month: 10, views: 600},
-	  {month: 11, views: 1200},
-	  {month: 12, views: 10}
-	], ".graphic3", "#FB6533");
-
-	//Graphic 4
-
-	drawStat([
-	  {month: 1, views: 3},
-	  {month: 2, views: 800},
-	  {month: 3, views: 300},
-	  {month: 4, views: 100},
-	  {month: 5, views: 750},
-	  {month: 6, views: 500},
-	  {month: 7, views: 350},
-	  {month: 8, views: 800},
-	  {month: 9, views: 340},
-	  {month: 10, views: 80},
-	  {month: 11, views: 900},
-	  {month: 12, views: 10}
-	], ".graphic4", "#BCA5D1");
-
-	//Graphic 5
-
-	drawStat([
-	  {month: 1, views: 3},
-	  {month: 2, views: 200},
-	  {month: 3, views: 80},
-	  {month: 4, views: 700},
-	  {month: 5, views: 300},
-	  {month: 6, views: 150},
-	  {month: 7, views: 600},
-	  {month: 8, views: 800},
-	  {month: 9, views: 340},
-	  {month: 10, views: 80},
-	  {month: 11, views: 200},
-	  {month: 12, views: 10}
-	], ".graphic5", "#D267C6");
-
-	//Graphic 6
-
-	drawStat([
-	  {month: 1, views: 10},
-	  {month: 2, views: 3000},
-	  {month: 3, views: 150},
-	  {month: 4, views: 20},
-	  {month: 5, views: 1000},
-	  {month: 6, views: 1200},
-	  {month: 7, views: 3000},
-	  {month: 8, views: 800},
-	  {month: 9, views: 340},
-	  {month: 10, views: 80},
-	  {month: 11, views: 200},
-	  {month: 12, views: 10}
-	], ".graphic6", "#EFAA42");
-
-	//Graphic 7
-
-	drawStat([
-	  {month: 1, views: 3},
-	  {month: 2, views: 1000},
-	  {month: 3, views: 2000},
-	  {month: 4, views: 700},
-	  {month: 5, views: 100},
-	  {month: 6, views: 1200},
-	  {month: 7, views: 600},
-	  {month: 8, views: 1800},
-	  {month: 9, views: 1040},
-	  {month: 10, views: 600},
-	  {month: 11, views: 1200},
-	  {month: 12, views: 10}
-	], ".graphic7", "#FB6533");
-
-	//Graphic 8
-
-	drawStat([
-	  {month: 1, views: 3},
-	  {month: 2, views: 800},
-	  {month: 3, views: 300},
-	  {month: 4, views: 100},
-	  {month: 5, views: 750},
-	  {month: 6, views: 500},
-	  {month: 7, views: 350},
-	  {month: 8, views: 800},
-	  {month: 9, views: 340},
-	  {month: 10, views: 80},
-	  {month: 11, views: 900},
-	  {month: 12, views: 10}
-	], ".graphic8", "#BCA5D1");
-
-	//Slider
-	//
-
-	//Queremos mover cada uno de los li Stat
-	//
-
-	$btnLeft = $("#btn-slide-left");
-	$btnRight = $("#btn-slide-right");
-
-	var sliderPhotos = $(".Stats");
-
-	var offSet = -300;
-	var index = 0;
-
-	function move(index) {
-	  sliderPhotos.style.transform = "translateX("+(offSet*index)+"px";
-	}
-
-	function recalculate(index) {
-	  if (index ==8) {
-	    buttonNext.setAttribute("disabled", true);
-	  } else {
-	    buttonNext.removeAttribute("disabled", false);
+	var $bp = breakpoint.init();
+	$bp.on('change:breakpoint', function (e, breakpoint) {
+	  if (breakpoint === 'desktop') {
+	    $("body").removeClass('has-menuOpen');
 	  }
-
-	  if (index==0) {
-	    buttonPrev.setAttribute("disabled", true);
-	  } else {
-	    buttonPrev.removeAttribute("disabled", false);
-	  }
-	}
-
-	$btnRight.on("click", function() {
-	  index++;
-	  move(index);
-	  recalculate(index);
 	});
 
-	$btnLeft.on("click", function() {
-	  index--;
-	  move(index);
-	  recalculate(index);
-	})
+	slider.init(breakpoint);
+
 
 
 /***/ },
@@ -28861,6 +28590,441 @@
 	Object.defineProperty(exports, '__esModule', { value: true });
 
 	})));
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(1);
+
+	var buttonOpen = $(".Btn-open");
+	var buttonClose = $(".Btn-close");
+	var $body = $("body")
+
+	buttonOpen.on("click", function(e) {
+	  $body.toggleClass("has-menuOpen", true);
+	});
+
+	buttonClose.on("click", function(e) {
+	  $body.toggleClass("has-menuOpen", false);
+	});
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(1);
+
+	var btnDescriptionAction = $(".js-button-description");
+	var description = $(".js-clamp");
+	var isClamp = true;
+
+	btnDescriptionAction.on("click", function(e) {
+	  isClamp = !isClamp;
+	  if (isClamp) {
+	    description.parent().toggleClass('has-openDescription', false);
+	  } else {
+	    description.parent().toggleClass('has-openDescription', true);
+	  }
+
+	});
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(1);
+	__webpack_require__(2);
+
+	$(function () {
+	  $('[data-toggle="popover"]').popover({
+	    placement: 'bottom',
+	    html: true,
+	    content: function () {
+	      var id = $(this).data('content-id');
+	      return $('#' + id).html();
+	    }
+	  }).on('inserted.bs.popover', function (e) {
+	    var $this = $(this);
+	    var popoverId = $this.attr('aria-describedby');
+	    var popoverPosition = $this.attr('popover-position');
+	    var $popover = $('#' + popoverId);
+	    if (popoverPosition === 'bottom-left') {
+	      $popover.addClass('bottom-left');
+	      $popover.css('margin-left', ($popover.width() / 2 - $this.outerWidth() / 2 - 10)+'px');
+	    }
+
+	    if (popoverPosition === 'bottom-right') {
+	      $popover.addClass('bottom-right');
+	      $popover.css('margin-left', ($this.outerWidth() / 2 - $popover.width() / 2 + 10)+'px');
+	    }
+	  });
+	});
+
+
+	$('body').on('click', function(e) {
+	  $('[data-toggle=popover]').each(function() {
+	    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+	      $(this).popover('hide');
+	    }
+	  });
+	});
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(1);
+	var d3 = __webpack_require__(3);
+
+	var drawStat = function (data, selector, color) {
+	  var h = 58;
+	  var w = 172;
+	  var padding = [5, 10, 5, 10];
+
+	  var xScale = d3.scaleLinear()
+	    .range([padding[3], w - padding[1]]);
+
+	  var yScale = d3.scaleLinear()
+	      .range([h-padding[0], padding[2]]);
+
+	  //Add svg
+
+	  var svg = d3.select(selector)
+	            .append("svg")
+	            .attr("width", w)
+	            .attr("height", h);
+
+	  //Set the domain
+
+	  xScale.domain([1, d3.max(data, function(d) {
+	    return d.month;
+	  })]);
+
+	  yScale.domain([0, d3.max(data, function(d) {
+	    return d.views;
+	  })]);
+
+	  //Define the line
+
+	  var lineGen = d3.line()
+	      // .curve(d3.curveLinear());
+	      .x(function(d) {
+	        return xScale(d.month);
+	      })
+	      .y(function(d) {
+	        return yScale(d.views);
+	      });
+	      // .interpolate("basis");
+
+	  svg.append("path")
+	      .attr("d", lineGen(data))
+	      .attr("stroke", color)
+	      .attr("stroke-width", 2)
+	      .attr("fill", "none");
+	}
+
+	//Graphic 1
+
+	drawStat([
+	  {month: 1, views: 3},
+	  {month: 2, views: 200},
+	  {month: 3, views: 80},
+	  {month: 4, views: 700},
+	  {month: 5, views: 300},
+	  {month: 6, views: 150},
+	  {month: 7, views: 600},
+	  {month: 8, views: 800},
+	  {month: 9, views: 340},
+	  {month: 10, views: 80},
+	  {month: 11, views: 200},
+	  {month: 12, views: 10}
+	], ".graphic1", "#D267C6");
+
+	//Graphic 2
+
+	drawStat([
+	  {month: 1, views: 10},
+	  {month: 2, views: 3000},
+	  {month: 3, views: 150},
+	  {month: 4, views: 20},
+	  {month: 5, views: 1000},
+	  {month: 6, views: 1200},
+	  {month: 7, views: 3000},
+	  {month: 8, views: 800},
+	  {month: 9, views: 340},
+	  {month: 10, views: 80},
+	  {month: 11, views: 200},
+	  {month: 12, views: 10}
+	], ".graphic2", "#EFAA42");
+
+	//Graphic 3
+
+	drawStat([
+	  {month: 1, views: 3},
+	  {month: 2, views: 1000},
+	  {month: 3, views: 2000},
+	  {month: 4, views: 700},
+	  {month: 5, views: 100},
+	  {month: 6, views: 1200},
+	  {month: 7, views: 600},
+	  {month: 8, views: 1800},
+	  {month: 9, views: 1040},
+	  {month: 10, views: 600},
+	  {month: 11, views: 1200},
+	  {month: 12, views: 10}
+	], ".graphic3", "#FB6533");
+
+	//Graphic 4
+
+	drawStat([
+	  {month: 1, views: 3},
+	  {month: 2, views: 800},
+	  {month: 3, views: 300},
+	  {month: 4, views: 100},
+	  {month: 5, views: 750},
+	  {month: 6, views: 500},
+	  {month: 7, views: 350},
+	  {month: 8, views: 800},
+	  {month: 9, views: 340},
+	  {month: 10, views: 80},
+	  {month: 11, views: 900},
+	  {month: 12, views: 10}
+	], ".graphic4", "#BCA5D1");
+
+	//Graphic 5
+
+	drawStat([
+	  {month: 1, views: 3},
+	  {month: 2, views: 200},
+	  {month: 3, views: 80},
+	  {month: 4, views: 700},
+	  {month: 5, views: 300},
+	  {month: 6, views: 150},
+	  {month: 7, views: 600},
+	  {month: 8, views: 800},
+	  {month: 9, views: 340},
+	  {month: 10, views: 80},
+	  {month: 11, views: 200},
+	  {month: 12, views: 10}
+	], ".graphic5", "#D267C6");
+
+	//Graphic 6
+
+	drawStat([
+	  {month: 1, views: 10},
+	  {month: 2, views: 3000},
+	  {month: 3, views: 150},
+	  {month: 4, views: 20},
+	  {month: 5, views: 1000},
+	  {month: 6, views: 1200},
+	  {month: 7, views: 3000},
+	  {month: 8, views: 800},
+	  {month: 9, views: 340},
+	  {month: 10, views: 80},
+	  {month: 11, views: 200},
+	  {month: 12, views: 10}
+	], ".graphic6", "#EFAA42");
+
+	//Graphic 7
+
+	drawStat([
+	  {month: 1, views: 3},
+	  {month: 2, views: 1000},
+	  {month: 3, views: 2000},
+	  {month: 4, views: 700},
+	  {month: 5, views: 100},
+	  {month: 6, views: 1200},
+	  {month: 7, views: 600},
+	  {month: 8, views: 1800},
+	  {month: 9, views: 1040},
+	  {month: 10, views: 600},
+	  {month: 11, views: 1200},
+	  {month: 12, views: 10}
+	], ".graphic7", "#FB6533");
+
+	//Graphic 8
+
+	drawStat([
+	  {month: 1, views: 3},
+	  {month: 2, views: 800},
+	  {month: 3, views: 300},
+	  {month: 4, views: 100},
+	  {month: 5, views: 750},
+	  {month: 6, views: 500},
+	  {month: 7, views: 350},
+	  {month: 8, views: 800},
+	  {month: 9, views: 340},
+	  {month: 10, views: 80},
+	  {month: 11, views: 900},
+	  {month: 12, views: 10}
+	], ".graphic8", "#BCA5D1");
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(1);
+
+	$tradersTrigger = $("#traders-trigger");
+	$tradersContainer = $("#traders-container");
+	$icon = $(".Btn-tradersIcon");
+
+	$tradersTrigger.on("click", function(e) {
+	  $tradersContainer.toggleClass("Open-traders");
+	})
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(1);
+
+	var btnList = $('.js-btn-list');
+	var btnGrid = $('.js-btn-grid');
+	var mainContent = $('.js-main-content');
+
+	// var actionItemList = btnList.parent();
+	// var actionItemGrid = btnGrid.parent();
+
+	// Variable que define el estado
+	var isList = false;
+
+	function handleClick (e) {
+	 // cambiamos el estado
+	 isList = !isList;
+
+	 //  Desactivamos el botón para evitar volver a hacer click en el mismo
+	 //  Si no es list, disabled
+	 //  Si no es list, añadimos la clase is-active al padre
+	 btnGrid.prop('disabled', !isList);
+	 btnGrid.parent().toggleClass('is-active', !isList);
+
+	 //  Si es list, disabled
+	 //  Si es list, añadimos la clase is-active al padre
+	 btnList.prop('disabled', isList);
+	 btnList.parent().toggleClass('is-active', isList);
+	 // Añadimos la clase is-list si es list.
+	 mainContent.toggleClass('is-list', isList);
+	}
+
+	// Ambos botones tienen responden al evento click con la misma función
+	btnList.on('click', handleClick);
+	btnGrid.on('click', handleClick);
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(1);
+	var breakpoint;
+
+	// Based in https://www.lullabot.com/articles/importing-css-breakpoints-into-javascript
+
+	module.exports = {
+	  init: function () {
+	    var self = this;
+	    $(window).resize(function () {
+	      self.refresh();
+	    }).resize();
+	    return $(this);
+	  },
+
+	  refresh: function () {
+	    var value = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
+	    if (value !== breakpoint) {
+	      breakpoint = value;
+	      $(this).trigger('change:breakpoint', breakpoint);
+	    }
+	  },
+
+	  value: function () {
+	    return breakpoint;
+	  }
+	}
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(1);
+
+	$btnLeft = $("#btn-slide-left");
+	$btnRight = $("#btn-slide-right");
+
+	var $slider = $(".js-stats");
+	var totalItems = $(".js-stat").length - 1;
+	var index = 0;
+	var margin = 10;
+	var breakpointController;
+	var max;
+
+	function move(index, animated) {
+	  var $item = $(".js-stat").eq(index);
+	  var offset = $item.position().left;
+
+	  if (animated === true) {
+	    $slider.animate({
+	      left: (offset * -1)
+	    }, 'fast');
+	  } else {
+	    $slider.css('left', (offset * -1));
+	  }
+	}
+
+	function recalculateButtons(index) {
+	  if (index < max) {
+	    $btnRight.attr("disabled", false);
+	  } else {
+	    $btnRight.attr("disabled", true);
+	  }
+
+	  if (index > 0) {
+	    $btnLeft.attr("disabled", false);
+	  } else {
+	    $btnLeft.attr("disabled", true);
+	  }
+	}
+
+	function doMove(step) {
+	  var animated = step !== 0;
+	  var itemsWindow = breakpointController.value() === 'bigdesktop' ? 4 : 3;
+	  max = totalItems - itemsWindow + 1;
+	  index = index + step;
+
+	  if (index > max) {
+	    doMove(-1);
+	  } else {
+	    move(index, animated);
+	    recalculateButtons(index);
+	  }
+	}
+
+	module.exports = {
+	  init: function (breakpoint) {
+	    breakpointController = breakpoint;
+
+	    $btnRight.on("click", function() {
+	      doMove(1);
+	    });
+
+	    $btnLeft.on("click", function() {
+	      doMove(-1);
+	    });
+
+	    $(window).on('resize', function () {
+	      doMove(0);
+	    }).resize();
+	  }
+	}
 
 
 /***/ }
